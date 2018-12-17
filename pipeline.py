@@ -91,6 +91,7 @@ class UAandPFG(SimpleTask):
         global UAX, PFG
         if self._counter > 0:
             self._counter -= 1
+            return None
         UAX = random.sample(USER_AGENTS, 1)[0].strip()
         r = http_client.fetch(
             'https://www.tumblr.com/privacy/consent?redirect=https%3A%2F%2Fabrandecarlo.tumblr.com%2F',
